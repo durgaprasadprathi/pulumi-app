@@ -1,0 +1,22 @@
+version: "3.2"
+services:
+  pulumi_api:
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        - PULUMI_BASE_URL=http://qcloud-pulumi.test.appmodz.net/
+
+    ports:
+      - '3000:6792'
+
+    container_name: pulumi_api
+    volumes:
+      - qcloud-backend:/home/
+volumes:
+  qcloud-backend:
+    external: true
+
+    
+
