@@ -12,11 +12,7 @@ services:
       - '3000:6792'
 
     container_name: pulumi_api
-    volumes:
-      - qcloud-backend:/home/
-volumes:
-  qcloud-backend:
-    external: true
+    
 
     
 
